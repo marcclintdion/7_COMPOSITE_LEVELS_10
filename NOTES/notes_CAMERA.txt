@@ -1,0 +1,12 @@
+a +14 has been added to the iOS perspective F.O.V. to correct for what appears 
+to be a discrepancy in how the camera matrix is being setup for both iOS and Windows.
+This error looks like it may be connected to the WxH of screen variables. 
+//#################################################################################################################################
+The following modifications to the windowing sus-system, causes the shadows to break????
+    //=============================================================================================================================
+    DWORD wndStyle   = WS_POPUP;
+    //DWORD wndStyle   = WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX | WS_CLIPCHILDREN | WS_CLIPSIBLINGS;
+    //----------------------------------------------------------------------------------------------------------------
+    
+    SetWindowLong(g_hWnd, GWL_STYLE, WS_POPUP);        
+    //SetWindowLong(g_hWnd, GWL_STYLE, WS_POPUP | WS_CLIPCHILDREN | WS_CLIPSIBLINGS);
